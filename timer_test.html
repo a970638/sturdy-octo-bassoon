@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <title>js計算頁面停留時間_www.jbxue.com</title>
+  <script type="text/javascript" src="jquery.js"></script>
+ </head>
+ <body onload="timer()"> <!--  ***這邊 onload timer();***  -->
+
+        <script language="javascript">  
+            setInterval(count, 1000); //***這個直接放在這邊就好，笑死 好拙劣但好有效的方法
+
+            function count() {
+                var get_input_value = parseInt(document.getElementById('testaa').value); //取值
+                var time_count = get_input_value += 1;  
+                document.getElementById('testaa').value = time_count;  //回寫
+                
+            }
+
+            function timer(){
+                document.getElementById('testaa').value = 0;
+
+                // var myTimer = setInterval(count, 1000); //每1000毫秒 執行一次這個function
+                // clearInterval(myTimer);//重置 myTimer的setInterval **但可這個可能要看一下好像有錯她不會重置
+            }
+
+        </script>  
+        <form name="fm0" onsubmit="0">  
+            <font color="#888888" size="-1">您在本網頁的停留時間:</font>  
+            <input id="testaa" value='0' type="text" name="time_spent" size=7 onfocus="this.blur()">   <!--  這邊給value 預設0 ，我們剛剛的問題點就是預設值不知道要放哪邊 直接放在這邊應該就可以ㄌ;***  -->
+        </form>  
+                
+                <button onclick="timer();">換頁</button>
+    </body>  
+</html>
